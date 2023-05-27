@@ -61,6 +61,15 @@ bot.loop.run_until_complete(bot.__ainit__())
 async def event_eventsub_notification_channel_shoutout_receive(payload: eventsub.ChannelShoutoutReceiveData) -> None:
     logger.info(f"{datetime.datetime.now().isoformat()}, Shoutout Event, {payload.data.user.name}")
 
+
+@esbot.event()
+async def event_eventsub_notification_channel_reward_redeem(
+    payload: eventsub.CustomReward,
+) -> None:
+    logger.info(
+        f"{payload.data.redeemed_at}, Redeem Event, {payload.data.id}, {payload.data.broadcaster.name}, {payload.data.user.name}, {payload.data.reward.title}, {payload.data.status}"
+     )  
+
 @esbot.event()
 async def event_eventsub_notification_followV2(payload: eventsub.ChannelFollowData) -> None:
     logger.info(f"{payload.data.followed_at}, Follow Event, {payload.data.user.name}, {payload.data.broadcaster.name}") #this uses the payload timestamp instead
