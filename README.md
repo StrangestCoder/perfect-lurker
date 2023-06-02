@@ -15,3 +15,10 @@ pip install -r requirements.txt
 python main.py
 
 ```
+
+
+# Note:
+The link with the scopes for these example might look something like this:
+```
+<a href="https://id.twitch.tv/oauth2/authorize?response_type=code&client_id=<CLIENT_ID>&redirect_uri=<CALLBACK>k&scope=chat%3Aedit+moderator%3Aread%3Afollowers+channel%3Amanage%3Aredemptions+moderator%3Aread%3Ashoutouts"> Click here</a>
+```
